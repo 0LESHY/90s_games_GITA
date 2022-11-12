@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+      table, td {
+        border:3px solid rgb(0, 0, 0);
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>Image Slider</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="jostyle.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body style="background-image: url('images/fan.gif');">
+   
+    <div class="g_infos">
+      <h1 id="name">Grim Fandango</h1>
+      <br>
+      <center>
+      <table style="width:250px; color: black;" class="someClass">
+        <tr>
+          <td>Developer</td>
+          <td>LucasArts</td>
+         
+        </tr>
+        <tr>
+          <td>Year</td>
+          <td>1998</td>
+          
+        </tr>
+        <tr>
+          <td>Genre</td>
+          <td>Graphic Adventure</td>
+         
+        </tr>
+      </table>
+    </center>
+    <br>
+    <img src="images/Steam-Logo.png" alt="" width="130" height="70" id="Button2" style="cursor: pointer;">
+    <img src="images/gog.png" alt="" width="130" height="70"  id="Button3" style="cursor: pointer;">
+      <br><br>
+    <hr><br>
+    <p id="para">Grim Fandango is a 1998 adventure game directed by Tim Schafer and developed and published by LucasArts for Microsoft Windows.
+       It is the first adventure game by LucasArts<span id="dots">...</span><span id="more">to use 3D computer graphics overlaid on pre-rendered static backgrounds. 
+        As with other LucasArts adventure games, the player must converse with characters and examine, collect, and use objects to solve puzzles.
+        Grim Fandango received praise for its art design and direction. It was selected for several awards and is often listed as one of the greatest video games of all time.
+         However, it was a commercial failure and contributed towards LucasArts' decision to end adventure game development and the decline of the adventure game genre.</span></p>
+      <button onclick="myFunction()" id="myBtn">Read more</button>
+      <br>
+  </div>
+    <input id="Button1" type="button" value="<HOME" />
+    
+   
+
+    <div class="slider">
+      <div class="slides">
+        
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        
+        
+        <div class="slide first">
+          <img src="images/g1.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="images/g2.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="images/g3.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="images/g4.jpg" alt="">
+        </div>
+        
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+        </div>
+        
+      </div>
+      
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
+      
+    </div>
+    
+    
+
+    <script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+      document.getElementById('radio' + counter).checked = true;
+      counter++;
+      if(counter > 4){
+        counter = 1;
+      }
+    }, 5000);
+   
+    $(function() {
+      $("#Button1").click(function() {
+        window.location.href = 'index.html';
+      });
+    });
+    function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+document.getElementById("para").style.color = "black";
+document.getElementById("name").style.color = "black";
+document.getElementById("para").style.fontFamily = "Arial";
+document.getElementById("para").style.fontSize = "16px";
+$(function() {
+      $("#Button2").click(function() {
+        window.location.href = 'https://store.steampowered.com/app/316790/Grim_Fandango_Remastered/';
+      });
+      $("#Button3").click(function() {
+        window.location.href = 'https://www.gog.com/en/game/grim_fandango_remastered';
+      });
+    });
+    $(document).ready(function() {
+  $(".someClass").hover(
+    function() {
+      $(this).css({ "border": "Solid red 1px" });
+    },
+    function() {
+      $(this).css({ "border": "solid rgb(45, 38, 86) 2px" });
+    });
+    });
+$(document).ready(function() {
+  $("#Button1").hover(
+    function() {
+      $(this).css({ "border": "Solid yellow 5px" });
+    },
+    function() {
+      $(this).css({ "border": "solid rgb(45, 38, 86) 3px" });
+    });
+    });
+
+   
+    </script>
+    
+
+  </body>
+</html>

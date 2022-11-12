@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <style>
+   table, td {
+    border:3px solid rgb(255, 255, 255);
+  } 
+  hr{
+        height: 3px;
+        background-color: rgb(170, 133, 9);
+        border: none;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fallout</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+  <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="jostyle.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="f_infos">
+    <h1 class="speedwagon">Fallout</h1>
+    <br>
+    <center>
+      <table style="width:250px" class="someClass">
+        <tr>
+          <td>Developer</td>
+          <td>Interplay</td>
+        </tr>
+        <tr>
+          <td>Year</td>
+          <td>1997</td>
+        </tr>
+        <tr>
+          <td>Genre</td>
+          <td>Role-playing</td>
+        </tr>
+      </table>
+    </center>
+    <br>
+    <img src="images/Steam-Logo.png" alt="" width="130" height="70" id="Button2" style="cursor: pointer;">
+    <img src="images/gog.png" alt="" width="130" height="70"  id="Button3" style="cursor: pointer;">
+    <br><br>
+    <hr ><br>
+    <p id="para">Fallout: A Post Nuclear Role Playing Game is a 1997 role-playing video game developed and published by Interplay Productions. 
+      In a mid-22nd century post-apocalyptic<span id="dots">...</span><span id="more"> and retro-futuristic world, decades after a global nuclear war, Fallout's protagonist, the Vault Dweller, inhabits the underground nuclear shelter Vault 13. 
+      After customizing their character, the player must scour the surrounding wasteland for a computer chip that can fix the Vault's failed water supply system. 
+      They interact with other survivors, some of whom give them missions, and engage in turn-based combat where they battle until their action points are depleted. Fallout received acclaim for its open-ended gameplay, character system, plot, and perceived original setting. It won "Role-Playing Game of the Year" from GameSpot and Computer Games Magazine, was nominated by the Academy of Interactive Arts & Sciences at the Spotlight Awards, and is often listed among the greatest video games of all time.</span></p>
+      <button onclick="myFunction()" id="myBtn">Read more</button>
+      <br>
+  </div>
+  
+  <input id="Button1" type="button" value="<HOME" />
+  <div class="slider">
+    <div class="slides">
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <div class="slide first">
+        <img src="images/f1.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="images/f2.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="images/f3.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="images/f4.jpg" alt="">
+      </div>
+        
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+      </div>
+        
+    </div>
+    <div class="navigation-manual">
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+      <label for="radio4" class="manual-btn"></label>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+  var counter = 1;
+  setInterval(function(){
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if(counter > 4){
+      counter = 1;
+    }
+  }, 5000);
+
+  $(function() {
+    $("#Button1").click(function() {
+      window.location.href = 'index.html';
+    });
+  });
+  $(function() {
+      $("#Button2").click(function() {
+        window.location.href = 'https://store.steampowered.com/app/38400/Fallout_A_Post_Nuclear_Role_Playing_Game/';
+      });
+    });
+$(function() {
+      $("#Button3").click(function() {
+        window.location.href = 'https://www.gog.com/en/game/fallout';
+      });
+    });
+
+  function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+$(document).ready(function() {
+  $(".someClass").hover(
+    function() {
+      $(this).css({ "border": "Solid red 1px" });
+    },
+    function() {
+      $(this).css({ "border": "solid yellow 2px" });
+    });
+    });
+$(document).ready(function() {
+  $("#Button1").hover(
+    function() {
+      $(this).css({ "border": "Solid green 5px" });
+    },
+    function() {
+      $(this).css({ "border": "solid red 3px" });
+    });
+    });
+
+document.getElementById("para").style.color = "limegreen";
+document.getElementById("para").style.fontFamily = "Arial";
+document.getElementById("para").style.fontSize = "16px";
+
+$(document).ready(function(){
+  
+  $(".f_infos").css({"background-color": "black",});
+
+});
+
+</script>
+    
+
+  </body>
+</html>

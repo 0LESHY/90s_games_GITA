@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>90's Games</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+        <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  </head>
+  <body style = "font-family: sens-serif; height: 100vh; overflow: hidden;">
+    <header>
+      <div class="inner-width">
+        <a href="index.html" class="logo"><img  alt="">90's games</a>
+        <i class="menu-toggle-btn fas fa-bars"></i>
+        <nav class="navigation-menu">
+          <a href="index.html"><i class="fas fa-home home"></i> Home</a>
+          <a href="about.html"><i class="fas fa-align-left about"></i> About</a>
+          <a href="jojo.html"><i class="fab fa-buffer works"></i>Fallout</a>
+          <a href="halflife.html"><i class="fab fa-buffer works"></i>Half-Life </a>
+          <a href="grim.html"><i class="fab fa-buffer works"></i>GRIM F.</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <a href="grim.html"><div id="leftdiv"> </div></a>
+    </div>
+    <div class="container">
+      <a href="jojo.html"><div id="centerdiv"></div></a>
+    </div>
+    <div class="container">
+      <a href="halflife.html"><div id="rightdiv"></div></a>
+    </div>
+    <script type="text/javascript">
+    $(".menu-toggle-btn").click(function(){
+      $(this).toggleClass("fa-times");
+      $(".navigation-menu").toggleClass("active");
+    });
+    </script>
+  </body>
+</html>
